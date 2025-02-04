@@ -1,11 +1,13 @@
 import { db } from "../../db/dbConfig";
 
-const userExists = async (email: string) => {
-  const user = await db.user.findFirst({ where: { email } });
-  if (user) {
+const userExists = async (email: string, id?: string) => {
+  try {
+    const user = await db.user.findFirst({
+      where: { OR: [{ email }, { id }] },
+    });
     return user;
-  } else {
-    return null;
+  } catch (error) {
+    throw error;
   }
 };
 
@@ -15,7 +17,11 @@ const createUser = async (credentials: {
   firstName?: string;
   lastName?: string;
 }) => {
-  return await db.user.create({ data: credentials });
+  try {
+    return await db.user.create({ data: credentials });
+  } catch (error) {
+    throw error;
+  }
 };
 
 const updateUser = async (
@@ -27,10 +33,14 @@ const updateUser = async (
   },
   id: string
 ) => {
-  return await db.user.update({
-    where: { id },
-    data: credentials,
-  });
+  try {
+    return await db.user.update({
+      where: { id },
+      data: credentials,
+    });
+  } catch (error) {
+    throw error;
+  }
 };
 
 export { userExists, createUser, updateUser };

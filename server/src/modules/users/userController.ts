@@ -1,4 +1,5 @@
 import { comparePassword, hashPassword } from "../../utils/hash";
+import logger from "../../utils/logger";
 import { userExists, createUser, updateUser } from "./userService";
 import { Request, Response } from "express";
 
@@ -10,23 +11,28 @@ const adaptDb: any = async (req: Request, res: Response) => {
 
     if (doesUserExist) {
       res.status(200).json(doesUserExist);
+      logger.info(`User ${doesUserExist.id} logged in successfully`);
     } else {
-      const newUser = await createUser(email);
+      const newUser = await createUser({ email });
       res.status(201).json(newUser);
+      logger.info(`User ${newUser.id} created an account successfully`);
     }
   } catch (error) {
     res.status(500).json({ message: "Internal server error" });
+    logger.error(`Internal server error`);
   }
 };
 
-const register = async (req: Request, res: Response) => {
+const register: any = async (req: Request, res: Response) => {
   const { email, password, firstName, lastName } = req.body;
 
   try {
     const doesUserExists = await userExists(email);
 
     if (doesUserExists) {
-      return res.status(400).json({ message: "Invalid credentials" });
+      res.status(400).json({ message: "Invalid credentials" });
+      logger.warn(`Failed registration from ${req.ip}`);
+      return;
     }
 
     const user: {
@@ -45,8 +51,10 @@ const register = async (req: Request, res: Response) => {
     const newUser = await createUser(user);
 
     res.status(201).json(newUser);
+    logger.info(`User ${newUser.id} created an account successfully`);
   } catch (error) {
     res.status(500).json({ message: "Internal server error" });
+    logger.error(`Internal server error`);
   }
 };
 
@@ -60,26 +68,41 @@ const login: any = async (req: Request, res: Response) => {
       !doesUserExists ||
       !(await comparePassword(password, doesUserExists.password as string))
     ) {
-      return res.status(404).json({ message: "Invalid credentials" });
+      res.status(404).json({ message: "Invalid credentials" });
+      logger.warn(`Failed login from ${req.ip}`);
+      return;
     }
 
     res.status(200).json(doesUserExists);
+    logger.info(`User ${doesUserExists.id} created an account successfully`);
   } catch (error) {
     res.status(500).json({ message: "Internal server error" });
+    logger.error(`Internal server error`);
   }
 };
 
-const updateProfile = async (req: Request, res: Response) => {
+const updateProfile: any = async (req: Request, res: Response) => {
   const newUserData = req.body;
-  const { id } = req.query;
+  const params = req.params;
 
   if (newUserData.password)
     newUserData.password = await hashPassword(newUserData.password);
 
   try {
-    res.status(201).json(await updateUser(newUserData, id as string));
+    const doesUserExists = await userExists("", params.id as string);
+
+    if (!params.id || !doesUserExists) {
+      res.status(404).json({ message: "User not found" });
+      logger.warn(`Failed account modification attempt from ${req.ip}`);
+      return;
+    }
+    res.status(200).json(await updateUser(newUserData, params.id as string));
+    logger.info(`User ${doesUserExists.id} updated their account successfully`);
   } catch (error) {
+    console.log(error);
+
     res.status(500).json({ message: "Internal server error" });
+    logger.error(`Internal server error`);
   }
 };
 

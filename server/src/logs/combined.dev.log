@@ -1,0 +1,62 @@
+{"level":"info","message":"SERVER UP!!!","service":"user-service","timestamp":"2025-02-02T20:09:37.910Z"}
+{"level":"info","message":"User 1 logged in successfully","service":"user-service","timestamp":"2025-02-02T20:20:52.747Z"}
+{"level":"info","message":"User 1 created an account successfully","service":"user-service","timestamp":"2025-02-02T20:20:52.768Z"}
+{"level":"warn","message":"Failed registration from undefined","service":"user-service","timestamp":"2025-02-02T20:20:52.775Z"}
+{"level":"info","message":"User 1 created an account successfully","service":"user-service","timestamp":"2025-02-02T20:20:52.780Z"}
+{"level":"warn","message":"Failed login from undefined","service":"user-service","timestamp":"2025-02-02T20:20:52.783Z"}
+{"level":"info","message":"User 1 created an account successfully","service":"user-service","timestamp":"2025-02-02T20:20:52.787Z"}
+{"level":"info","message":"User 1 updated their account successfully","service":"user-service","timestamp":"2025-02-02T20:20:52.809Z"}
+{"level":"info","message":"SERVER UP!!!","service":"user-service","timestamp":"2025-02-02T20:20:54.680Z"}
+{"level":"info","message":"User 679fd3a7497d80e81656c1e7 created an account successfully","service":"user-service","timestamp":"2025-02-02T20:20:55.322Z"}
+{"level":"info","message":"User 679fd3a7497d80e81656c1e6 logged in successfully","service":"user-service","timestamp":"2025-02-02T20:20:56.358Z"}
+{"level":"info","message":"User 679fd3a8497d80e81656c1e8 created an account successfully","service":"user-service","timestamp":"2025-02-02T20:20:56.444Z"}
+{"level":"warn","message":"Failed registration from ::ffff:127.0.0.1","service":"user-service","timestamp":"2025-02-02T20:20:56.478Z"}
+{"level":"info","message":"User 679fd3a7497d80e81656c1e6 created an account successfully","service":"user-service","timestamp":"2025-02-02T20:20:56.534Z"}
+{"level":"info","message":"User 1 logged in successfully","service":"user-service","timestamp":"2025-02-03T17:12:52.180Z"}
+{"level":"info","message":"User 1 created an account successfully","service":"user-service","timestamp":"2025-02-03T17:12:52.195Z"}
+{"level":"warn","message":"Failed registration from undefined","service":"user-service","timestamp":"2025-02-03T17:12:52.202Z"}
+{"level":"info","message":"User 1 created an account successfully","service":"user-service","timestamp":"2025-02-03T17:12:52.208Z"}
+{"level":"warn","message":"Failed login from undefined","service":"user-service","timestamp":"2025-02-03T17:12:52.211Z"}
+{"level":"info","message":"User 1 created an account successfully","service":"user-service","timestamp":"2025-02-03T17:12:52.216Z"}
+{"level":"info","message":"User 1 updated their account successfully","service":"user-service","timestamp":"2025-02-03T17:12:52.255Z"}
+{"level":"info","message":"SERVER UP!!!","service":"user-service","timestamp":"2025-02-03T17:13:03.125Z"}
+{"level":"info","message":"User 67a0f91f329902ea4d58de99 created an account successfully","service":"user-service","timestamp":"2025-02-03T17:13:03.947Z"}
+{"level":"info","message":"User 67a0f91f329902ea4d58de98 logged in successfully","service":"user-service","timestamp":"2025-02-03T17:13:04.010Z"}
+{"level":"info","message":"User 67a0f920329902ea4d58de9a created an account successfully","service":"user-service","timestamp":"2025-02-03T17:13:04.132Z"}
+{"level":"warn","message":"Failed registration from ::ffff:127.0.0.1","service":"user-service","timestamp":"2025-02-03T17:13:04.182Z"}
+{"level":"info","message":"User 67a0f91f329902ea4d58de98 created an account successfully","service":"user-service","timestamp":"2025-02-03T17:13:04.230Z"}
+{"level":"info","message":"User 1 logged in successfully","service":"user-service","timestamp":"2025-02-03T17:13:28.355Z"}
+{"level":"info","message":"User 1 created an account successfully","service":"user-service","timestamp":"2025-02-03T17:13:28.373Z"}
+{"level":"warn","message":"Failed registration from undefined","service":"user-service","timestamp":"2025-02-03T17:13:28.382Z"}
+{"level":"info","message":"User 1 created an account successfully","service":"user-service","timestamp":"2025-02-03T17:13:28.402Z"}
+{"level":"warn","message":"Failed login from undefined","service":"user-service","timestamp":"2025-02-03T17:13:28.406Z"}
+{"level":"info","message":"User 1 created an account successfully","service":"user-service","timestamp":"2025-02-03T17:13:28.411Z"}
+{"level":"info","message":"User 1 updated their account successfully","service":"user-service","timestamp":"2025-02-03T17:13:28.426Z"}
+{"level":"info","message":"SERVER UP!!!","service":"user-service","timestamp":"2025-02-03T17:13:35.601Z"}
+{"level":"info","message":"User 67a0f940c7a5df35ffe4c228 created an account successfully","service":"user-service","timestamp":"2025-02-03T17:13:36.461Z"}
+{"level":"info","message":"User 67a0f940c7a5df35ffe4c227 logged in successfully","service":"user-service","timestamp":"2025-02-03T17:13:36.551Z"}
+{"level":"info","message":"User 67a0f940c7a5df35ffe4c229 created an account successfully","service":"user-service","timestamp":"2025-02-03T17:13:36.689Z"}
+{"level":"warn","message":"Failed registration from ::ffff:127.0.0.1","service":"user-service","timestamp":"2025-02-03T17:13:36.760Z"}
+{"level":"info","message":"User 67a0f940c7a5df35ffe4c227 created an account successfully","service":"user-service","timestamp":"2025-02-03T17:13:36.813Z"}
+{"level":"warn","message":"Failed login from ::ffff:127.0.0.1","service":"user-service","timestamp":"2025-02-03T17:13:36.867Z"}
+{"level":"warn","message":"Failed account modification attempt from ::ffff:127.0.0.1","service":"user-service","timestamp":"2025-02-03T17:13:36.948Z"}
+{"level":"warn","message":"Failed login from undefined","service":"user-service","timestamp":"2025-02-03T17:17:12.080Z"}
+{"level":"info","message":"User 1 created an account successfully","service":"user-service","timestamp":"2025-02-03T17:17:12.091Z"}
+{"level":"info","message":"SERVER UP!!!","service":"user-service","timestamp":"2025-02-03T17:17:12.526Z"}
+{"level":"info","message":"User 67a0fa1ab1150fb5a95c1c4e created an account successfully","service":"user-service","timestamp":"2025-02-03T17:17:14.195Z"}
+{"level":"info","message":"User 67a0fa19b1150fb5a95c1c4d logged in successfully","service":"user-service","timestamp":"2025-02-03T17:17:14.229Z"}
+{"level":"info","message":"User 67a0fa1ab1150fb5a95c1c4f created an account successfully","service":"user-service","timestamp":"2025-02-03T17:17:14.311Z"}
+{"level":"warn","message":"Failed registration from ::ffff:127.0.0.1","service":"user-service","timestamp":"2025-02-03T17:17:14.342Z"}
+{"level":"info","message":"User 67a0fa19b1150fb5a95c1c4d created an account successfully","service":"user-service","timestamp":"2025-02-03T17:17:14.384Z"}
+{"level":"warn","message":"Failed login from ::ffff:127.0.0.1","service":"user-service","timestamp":"2025-02-03T17:17:14.423Z"}
+{"level":"warn","message":"Failed account modification attempt from ::ffff:127.0.0.1","service":"user-service","timestamp":"2025-02-03T17:17:14.486Z"}
+{"level":"warn","message":"Failed login from undefined","service":"user-service","timestamp":"2025-02-03T17:22:54.746Z"}
+{"level":"info","message":"User 1 created an account successfully","service":"user-service","timestamp":"2025-02-03T17:22:54.765Z"}
+{"level":"info","message":"SERVER UP!!!","service":"user-service","timestamp":"2025-02-03T17:22:55.336Z"}
+{"level":"info","message":"User 67a0fb700516ecab6d5dbf4e created an account successfully","service":"user-service","timestamp":"2025-02-03T17:22:56.368Z"}
+{"level":"info","message":"User 67a0fb6f0516ecab6d5dbf4d logged in successfully","service":"user-service","timestamp":"2025-02-03T17:22:56.456Z"}
+{"level":"info","message":"User 67a0fb700516ecab6d5dbf4f created an account successfully","service":"user-service","timestamp":"2025-02-03T17:22:56.650Z"}
+{"level":"warn","message":"Failed registration from ::ffff:127.0.0.1","service":"user-service","timestamp":"2025-02-03T17:22:56.718Z"}
+{"level":"info","message":"User 67a0fb6f0516ecab6d5dbf4d created an account successfully","service":"user-service","timestamp":"2025-02-03T17:22:56.785Z"}
+{"level":"warn","message":"Failed login from ::ffff:127.0.0.1","service":"user-service","timestamp":"2025-02-03T17:22:56.874Z"}
+{"level":"info","message":"User 67a0fb6f0516ecab6d5dbf4d updated their account successfully","service":"user-service","timestamp":"2025-02-03T17:22:57.117Z"}

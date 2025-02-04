@@ -1,42 +1,14 @@
-import { describe, expect, test, it } from "@jest/globals";
+import { describe, expect, it } from "@jest/globals";
 import * as userService from "../userService";
-import { User } from "@prisma/client";
 import { adaptDb, login, updateProfile } from "../userController";
 import { register } from "../userController";
-import { db } from "../../../db/dbConfig";
 import * as hashFunctions from "../../../utils/hash";
-import { hashPassword } from "../../../utils/hash";
-
-beforeAll(async () => {
-  const count = await db.user.count();
-  if (count > 3) {
-    return;
-  } else {
-    const userList = [
-      {
-        email: "arthur@gmail.com",
-        FirstName: "Arthur",
-        LastName: "Morgan",
-        password: "12345",
-      },
-    ];
-
-    userList.forEach(async (user) => {
-      user.password = await hashPassword(user.password);
-    });
-    try {
-      await db.user.createMany({ data: userList });
-    } catch (error) {
-      console.log(error);
-    }
-  }
-});
 
 const payload = {
   id: "1",
   email: "arthur@gmail.com",
-  FirstName: "Arthur",
-  LastName: "Morgan",
+  firstName: "Arthur",
+  lastName: "Morgan",
   password: "12345",
 };
 
@@ -127,14 +99,15 @@ describe("Login controller", () => {
 
 describe("Update profile controller", () => {
   it("Should update the user", async () => {
+    jest.spyOn(userService, "userExists").mockResolvedValueOnce(payload);
     jest.spyOn(userService, "updateUser").mockResolvedValueOnce(payload);
 
-    const req = { body: payload, query: { id: "12345" } };
+    const req = { body: payload, params: { id: "12345" } };
     const res = { status: jest.fn().mockReturnThis(), json: jest.fn() };
 
     await updateProfile(req as any, res as any);
 
-    expect(res.status).toBeCalledWith(201);
+    expect(res.status).toBeCalledWith(200);
     expect(res.json).toBeCalledWith(payload);
   });
 });

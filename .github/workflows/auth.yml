@@ -46,8 +46,8 @@ jobs:
           ls
           cd vaultify
           git pull origin auth
-          npm install
           cd server
+          npm install
            # Create or update .env file
           cat <<EOT > .env
           DATABASE_URL="mongodb+srv://owoyemiameed:vaultify_20000@vaultify.wuiwj.mongodb.net/vaultify?retryWrites=true&w=majority&appName=vaultify"

@@ -17,19 +17,21 @@ const redisClient = new Redis({
   host: "127.0.0.1",
 });
 
-const limit = rateLimit({
-  store: new RedisStore({
-    sendCommand: (...args: [string, ...string[]]) =>
-      redisClient.call(...args) as Promise<RedisReply>,
-  }),
-  windowMs: 5 * 60 * 1000,
-  max: process.env.NODE_ENV === "production" ? 5 : 50,
-  message: "Too many requests, slow down",
-});
-
 export const app = express();
+if (process.env.NODE_ENV !== "development") {
+  app.use(
+    rateLimit({
+      store: new RedisStore({
+        sendCommand: (...args: [string, ...string[]]) =>
+          redisClient.call(...args) as Promise<RedisReply>,
+      }),
+      windowMs: 5 * 60 * 1000,
+      max: process.env.NODE_ENV === "production" ? 5 : 50,
+      message: "Too many requests, slow down",
+    })
+  );
+}
 
-app.use(limit);
 app.use(helmet());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());

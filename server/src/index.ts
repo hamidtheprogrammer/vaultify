@@ -48,7 +48,7 @@ app.get("/", (req: Request, res: Response) => {
   res.send("Hello from vaultify");
 });
 
-const port = Number(process.env.PORT) || 80;
+const port = Number(process.env.PORT) || 8000;
 
 app.listen(port, () => {
   console.log("server up!");

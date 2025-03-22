@@ -173,3 +173,4 @@
 {"level":"info","message":"User 67ded6f93028061313888601 created an account successfully","service":"user-service","timestamp":"2025-03-22T15:27:54.456Z"}
 {"level":"warn","message":"Failed login from ::ffff:127.0.0.1","service":"user-service","timestamp":"2025-03-22T15:27:54.501Z"}
 {"level":"info","message":"User 67ded6f93028061313888601 updated their account successfully","service":"user-service","timestamp":"2025-03-22T15:27:54.722Z"}
+{"level":"info","message":"SERVER UP!!!","service":"user-service","timestamp":"2025-03-22T15:56:51.185Z"}

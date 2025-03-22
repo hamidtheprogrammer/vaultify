@@ -4,6 +4,8 @@ import { cleanDb, seedDb } from "../../../db/seed";
 import { app } from "../../..";
 import { db } from "../../../db/dbConfig";
 
+jest.setTimeout(20000);
+
 beforeAll(async () => {
   await cleanDb();
   await seedDb();

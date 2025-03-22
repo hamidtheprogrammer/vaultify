@@ -44,7 +44,7 @@ jobs:
         run: |
           ssh -o StrictHostKeyChecking=no -i key.pem ec2-user@54.157.154.176 << 'EOF'
           ls
-          cd /home/ec2-user/vaultify
+          cd vaultify
           git pull origin auth
           npm install
           cd server

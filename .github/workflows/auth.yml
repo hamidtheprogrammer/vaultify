@@ -31,3 +31,20 @@ jobs:
       - name: Run test
         run: npm run test
         working-directory: ./server
+
+      - name: Setup SSH key
+        run: |
+          echo "$EC2_SSH_KEY" > key.pem
+          chmod 600 key.pem
+        env:
+          EC2_SSH_KEY: ${{secrets.EC2_SSH_KEY}}
+
+      - name: Deploy to EC2
+        run: |
+          ssh -o StrictHostKeyChecking=no -i key.pem ec2-user@54.157.154.176 << 'EOF'
+          cd /home/ec2-user/vaultify
+          git pull origin auth
+          npm install
+          cd server
+          npm run dev
+          EOF

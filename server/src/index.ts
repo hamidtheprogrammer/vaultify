@@ -50,7 +50,7 @@ app.get("/", (req: Request, res: Response) => {
 
 const port = Number(process.env.PORT) || 80;
 
-app.listen(port, "0.0.0.0", () => {
+app.listen(port, () => {
   console.log("server up!");
   logger.info("SERVER UP!!!");
 });

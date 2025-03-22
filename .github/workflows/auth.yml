@@ -14,6 +14,7 @@ jobs:
     env: # Move env inside the job
       DATABASE_URL: ${{ secrets.DATABASE_URL }}
       NODE_ENV: ${{ secrets.NODE_ENV }}
+      PORT: 4000
 
     steps:
       - name: Check out code
@@ -42,9 +43,18 @@ jobs:
       - name: Deploy to EC2
         run: |
           ssh -o StrictHostKeyChecking=no -i key.pem ec2-user@54.157.154.176 << 'EOF'
-          cd /home/ec2-user/vaultify
+          cd vaultify
           git pull origin auth
           npm install
           cd server
-          npm run dev
+           # Create or update .env file
+          cat <<EOT > .env
+          DATABASE_URL="mongodb+srv://owoyemiameed:vaultify_20000@vaultify.wuiwj.mongodb.net/vaultify?retryWrites=true&w=majority&appName=vaultify"
+          NODE_ENV=development
+          CLIENT_URL=http://localhost:3000
+          PORT=80
+          EOT
+
+          # Restart the server (change this if using PM2 or another process manager)
+          npm run dev &
           EOF

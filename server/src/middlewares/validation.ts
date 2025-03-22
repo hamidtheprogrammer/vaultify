@@ -7,7 +7,7 @@ const adaptDbValidator = () => {
 
 const registerValidator = () => {
   return [
-    body("email").isEmail().withMessage("Invalid email"),
+    body("email").isEmail().withMessage("Invalid email").toLowerCase(),
     body("password").isLength({ min: 8 }).withMessage("Invalid password"),
     body("firstName").optional().isString().withMessage("Invalid first name"),
     body("lastName").optional().isString().withMessage("Invalid last name"),
@@ -16,7 +16,7 @@ const registerValidator = () => {
 
 const loginValidator = () => {
   return [
-    body("email").isEmail().withMessage("Invalid email"),
+    body("email").isEmail().withMessage("Invalid email").toLowerCase(),
     body("password").isLength({ min: 8 }).withMessage("Invalid password"),
   ];
 };

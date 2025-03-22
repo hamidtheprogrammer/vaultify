@@ -3,12 +3,11 @@ import { describe, expect, it } from "@jest/globals";
 import { cleanDb, seedDb } from "../../../db/seed";
 import { app } from "../../..";
 import { db } from "../../../db/dbConfig";
-import { User } from "@prisma/client";
 
 beforeAll(async () => {
   await cleanDb();
   await seedDb();
-}, 10000);
+}, 5000);
 
 const payload = {
   id: "1",

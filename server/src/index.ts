@@ -48,3 +48,14 @@ app.listen(port, () => {
   console.log("server up!");
   logger.info("SERVER UP!!!");
 });
+
+// (origin, callback) => {
+//   const allowedOrigins = [process.env.CLIENT_URL];
+//   console.log(origin);
+
+//   if (!origin || !allowedOrigins.includes(origin)) {
+//     callback(new Error("Origin blocked by cors"), false);
+//   } else {
+//     callback(null, true);
+//   }
+// },

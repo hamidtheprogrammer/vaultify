@@ -45,6 +45,8 @@ const register: any = async (req: Request, res: Response) => {
       password,
     };
 
+    user.password = await hashPassword(password);
+
     if (firstName) user.firstName = firstName as string;
     if (lastName) user.lastName = lastName as string;
 
@@ -58,7 +60,7 @@ const register: any = async (req: Request, res: Response) => {
   }
 };
 
-const login: any = async (req: Request, res: Response) => {
+const login = async (req: Request, res: Response): Promise<void> => {
   const { email, password } = req.body;
 
   try {

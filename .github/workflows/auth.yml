@@ -11,6 +11,10 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    env: # Move env inside the job
+      DATABASE_URL: ${{ secrets.DATABASE_URL }}
+      NODE_ENV: ${{ secrets.NODE_ENV }}
+
     steps:
       - name: Check out code
         uses: actions/checkout@v4
@@ -18,7 +22,7 @@ jobs:
       - name: Setup node
         uses: actions/setup-node@v4
         with:
-          node-version: :20
+          node-version: 20
 
       - name: Install dependencies
         run: npm install
